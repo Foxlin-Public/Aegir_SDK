@@ -1,0 +1,53 @@
+{
+  "name": "@foxlin_industries/aegir-security",
+  "version": "0.1.0-Beta.1",
+  "description": "Aegir Security Phase 1 TypeScript client for identity graphing, exposure analysis, and reversible security actions.",
+  "license": "MIT",
+  "author": "Foxlin Industries",
+  "homepage": "https://github.com/Foxlin-Public/Aegir_SDK",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Foxlin-Public/Aegir_SDK.git",
+    "directory": "packages/npm"
+  },
+  "keywords": [
+    "aegir",
+    "security",
+    "identity",
+    "graph",
+    "exposure",
+    "audit",
+    "oidc",
+    "developerkey"
+  ],
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "clean": "node ./scripts/clean.mjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node ./scripts/rename-cjs.mjs",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "test": "npm run build && node ./tests/run-tests.mjs",
+    "pack:local": "npm run build && npm pack"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "typescript": "^5.9.3"
+  }
+}

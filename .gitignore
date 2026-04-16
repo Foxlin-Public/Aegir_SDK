@@ -1,0 +1,13 @@
+node_modules/
+dist/
+bin/
+obj/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.user
+*.suo
+artifacts/
+.DS_Store
+

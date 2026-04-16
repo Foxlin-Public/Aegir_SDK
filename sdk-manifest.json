@@ -1,0 +1,45 @@
+{
+  "sdkVersion": "0.1.0-Beta.1",
+  "betaLine": "Beta-1",
+  "packages": {
+    "dotnet": {
+      "packageId": "Foxlin.Aegir.Security",
+      "version": "0.1.0-Beta.1",
+      "source": "nuget.org"
+    },
+    "node": {
+      "packageName": "@foxlin_industries/aegir-security",
+      "version": "0.1.0-Beta.1",
+      "source": "npmjs.com"
+    },
+    "java": {
+      "coordinates": "cloud.foxlin:aegir-security:0.1.0-Beta.1",
+      "version": "0.1.0-Beta.1",
+      "source": "maven"
+    },
+    "python": {
+      "packageName": "foxlin-aegir-security",
+      "version": "0.1.0-Beta.1",
+      "source": "pypi"
+    },
+    "go": {
+      "module": "foxlin/aegir-security-go",
+      "version": "0.1.0-Beta.1",
+      "source": "go-module"
+    }
+  },
+  "mcp": {
+    "name": "aegir-sdk-mcp",
+    "protocol": "stdio",
+    "tools": [
+      "scan_identity",
+      "get_identity_graph",
+      "get_identity_graph_json",
+      "get_exposure_summary",
+      "perform_action",
+      "reverse_action",
+      "get_action_history"
+    ]
+  }
+}
+
