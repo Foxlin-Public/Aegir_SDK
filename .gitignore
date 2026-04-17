@@ -11,3 +11,4 @@ __pycache__/
 *.suo
 artifacts/
 .DS_Store
+mcp/.env.hosted

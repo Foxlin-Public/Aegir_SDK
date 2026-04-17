@@ -8,6 +8,7 @@ This repo contains only Beta-1 public SDK components:
 - installation wrappers for local setup and CI bootstrap
 - example consumers for `.NET` and `Node`
 - a Beta-1 MCP server that exposes the hosted Aegir API surface through the SDK
+- a Beta-1 hosted MCP service wrapper for Foxlin-managed shared access
 - Beta-1 documentation for installation, integration, repository layout, and MCP usage
 
 It does not include the private product runtime, Beta-2 work, or internal-only admin/product code.
@@ -96,9 +97,9 @@ bash ./installers/install-sdk.sh --node --dotnet --mcp
 - [Repository Layout](./docs/repository-layout.md)
 - [Installer Guide](./docs/installer.md)
 - [MCP Server Guide](./docs/mcp-server.md)
+- [Hosted MCP Guide](./docs/hosted-mcp.md)
 - [Integration: .NET](./docs/integration-dotnet.md)
 - [Integration: Node](./docs/integration-node.md)
 - [Integration: Java](./docs/integration-java.md)
 - [Integration: Python](./docs/integration-python.md)
 - [Integration: Go](./docs/integration-go.md)
-

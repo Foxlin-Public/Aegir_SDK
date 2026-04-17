@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/server.mjs",
-    "test": "node ./tests/server.test.mjs"
+    "start:hosted": "node ./src/hosted-server.mjs",
+    "test": "node ./tests/server.test.mjs && node ./tests/hosted-server.test.mjs"
   }
 }
-

@@ -6,6 +6,8 @@
 - `CHANGELOG.md`: Beta-1 SDK release notes for this repo
 - `CONTRIBUTING.md`: contribution rules
 - `sdk-manifest.json`: version and package manifest
+- `.github/workflows/hosted-mcp.yml`: Beta-1 hosted MCP validation and deployment workflow
+- `scripts/deploy-hosted-mcp.sh`: server deployment helper for the hosted MCP service
 
 ## `packages`
 
@@ -29,5 +31,6 @@
 
 - `package.json`: MCP package metadata
 - `src/server.mjs`: Beta-1 stdio MCP server
+- `src/hosted-server.mjs`: Beta-1 hosted HTTP MCP wrapper
 - `tests/server.test.mjs`: MCP tool-contract tests
-
+- `tests/hosted-server.test.mjs`: hosted MCP transport tests
