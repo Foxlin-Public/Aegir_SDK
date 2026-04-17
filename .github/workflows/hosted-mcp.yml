@@ -104,14 +104,14 @@ jobs:
             set -e
             mkdir -p '${REMOTE_PATH}'
             tar -xzf /tmp/aegir_sdk.tgz -C '${REMOTE_PATH}'
-            cat > '${REMOTE_PATH}/mcp/.env.hosted' <<'EOF'
-AEGIR_BASE_URL=${AEGIR_BASE_URL}
-AEGIR_CONFIG_KEY=${AEGIR_CONFIG_KEY}
-AEGIR_DEVELOPER_KEY=${AEGIR_DEVELOPER_KEY}
-AEGIR_MCP_HOST=${AEGIR_MCP_HOST}
-AEGIR_MCP_PORT=${AEGIR_MCP_PORT}
-AEGIR_MCP_BEARER_TOKEN=${AEGIR_MCP_BEARER_TOKEN}
-EOF
+            printf '%s\n' \
+              'AEGIR_BASE_URL=${AEGIR_BASE_URL}' \
+              'AEGIR_CONFIG_KEY=${AEGIR_CONFIG_KEY}' \
+              'AEGIR_DEVELOPER_KEY=${AEGIR_DEVELOPER_KEY}' \
+              'AEGIR_MCP_HOST=${AEGIR_MCP_HOST}' \
+              'AEGIR_MCP_PORT=${AEGIR_MCP_PORT}' \
+              'AEGIR_MCP_BEARER_TOKEN=${AEGIR_MCP_BEARER_TOKEN}' \
+              > '${REMOTE_PATH}/mcp/.env.hosted'
             chmod +x '${REMOTE_PATH}/scripts/deploy-hosted-mcp.sh'
             printf '%s\n' '${REMOTE_PASSWORD}' | sudo -SE bash '${REMOTE_PATH}/scripts/deploy-hosted-mcp.sh'
           "
