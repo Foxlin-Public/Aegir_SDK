@@ -6,7 +6,7 @@ const DEFAULT_HOST = process.env.AEGIR_MCP_HOST ?? "0.0.0.0";
 const REQUIRED_BEARER_TOKEN = process.env.AEGIR_MCP_BEARER_TOKEN;
 
 export function createHostedServer({
-  client = createClient(),
+  client,
   port = DEFAULT_PORT,
   host = DEFAULT_HOST,
   bearerToken = REQUIRED_BEARER_TOKEN
@@ -51,7 +51,8 @@ export function createHostedServer({
         const id = message.id ?? null;
 
         try {
-          const result = await handleMessage(client, message);
+          const resolvedClient = client ?? createClient();
+          const result = await handleMessage(resolvedClient, message);
           writeJson(response, 200, createJsonRpcSuccess(id, result));
         } catch (error) {
           writeJson(response, 500, createJsonRpcError(id, error));
