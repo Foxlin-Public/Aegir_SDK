@@ -112,7 +112,7 @@ jobs:
 
       - name: Deploy hosted MCP on server
         run: |
-          sshpass -p "${REMOTE_PASSWORD}" ssh "${REMOTE_USER}@${REMOTE_HOST}" "
+          sshpass -p "${REMOTE_PASSWORD}" ssh -tt "${REMOTE_USER}@${REMOTE_HOST}" "
             set -e
             mkdir -p '${REMOTE_PATH}'
             tar -xzf /tmp/aegir_sdk.tgz -C '${REMOTE_PATH}'
@@ -125,5 +125,5 @@ jobs:
               'AEGIR_MCP_BEARER_TOKEN=${AEGIR_MCP_BEARER_TOKEN}' \
               > '${REMOTE_PATH}/mcp/.env.hosted'
             chmod +x '${REMOTE_PATH}/scripts/deploy-hosted-mcp.sh'
-            printf '%s\n' '${REMOTE_PASSWORD}' | sudo -SE bash '${REMOTE_PATH}/scripts/deploy-hosted-mcp.sh'
+            printf '%s\n' '${REMOTE_PASSWORD}' | sudo -S -p '' bash '${REMOTE_PATH}/scripts/deploy-hosted-mcp.sh'
           "
