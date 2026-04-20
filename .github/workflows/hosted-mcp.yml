@@ -29,6 +29,12 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Build Node SDK package
+        working-directory: ./packages/npm
+        run: |
+          npm install
+          npm run build
+
       - name: Validate MCP package
         working-directory: ./mcp
         run: npm test
@@ -60,6 +66,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Build Node SDK package
+        working-directory: ./packages/npm
+        run: |
+          npm install
+          npm run build
 
       - name: Set default deployment path
         run: |
